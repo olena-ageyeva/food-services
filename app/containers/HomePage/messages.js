@@ -29,4 +29,8 @@ export default defineMessages({
     id: `${scope}.tryme.atPrefix`,
     defaultMessage: '@',
   },
+  menuHeader: {
+    id: `${scope}.menu.header`,
+    defaultMessage: 'Weekly Menu',
+  },
 });

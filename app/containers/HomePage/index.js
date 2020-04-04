@@ -69,7 +69,7 @@ export function HomePage({
       <div>
         <CenteredSection>
           <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
+            <FormattedMessage {...messages.menuHeader} />
           </H2>
           <p>
             <FormattedMessage {...messages.startProjectMessage} />
