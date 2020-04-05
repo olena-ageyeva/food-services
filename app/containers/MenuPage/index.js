@@ -25,6 +25,7 @@ import reducer from './reducer';
 import saga from './saga';
 
 import { menu } from '../HomePage/menu';
+import Content from './Content';
 
 const key = 'home';
 
@@ -33,8 +34,10 @@ export function MenuPage() {
   useInjectSaga({ key, saga });
 
   const group = window.location.href.split('/').reverse()[0];
+  const images = require.context('../../images', true);
 
   console.log('menu  items', menu[group].en.items);
+
   return (
     <article>
       <Helmet>
@@ -44,12 +47,23 @@ export function MenuPage() {
           content="A React.js Boilerplate application homepage"
         />
       </Helmet>
-      <h2>{menu[group].en.title}</h2>
-      {menu[group].en.items.map(item => (
-        <li key={`item_list_${item}`}>
-          {item.title} | {item.description} | {item.price}
-        </li>
-      ))}
+      <Content>
+        <h2>{menu[group].en.title}</h2>
+        <div id="card_container">
+          {menu[group].en.items.map(item => (
+            <div key={`item_list_${item}`} className="card">
+              <img
+                className="group_icon"
+                src={images(`./${group}_icon.png`)}
+                alt={group}
+              />
+              <h2 className="title">{item.title}</h2>
+              <p className="description">{item.description}</p>
+              <p className="price">{item.price}</p>
+            </div>
+          ))}
+        </div>
+      </Content>
     </article>
   );
 }

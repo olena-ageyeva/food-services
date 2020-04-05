@@ -18,6 +18,7 @@ export default function OrderPage() {
   const [orderOpen, setOrderOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
+  const user = { email: 'eageeva@hotmail.com', name: 'Olena Ageyeva' };
   console.log(submitted);
 
   return (
@@ -48,15 +49,86 @@ export default function OrderPage() {
               onSubmit={() => setSubmitted(true)}
               target="hidden_iframe"
             >
-              <label htmlFor="entry.927940808">Name: </label>
-              <input name="entry.927940808" type="text" />
+              <label htmlFor="emailAddress">Email: </label>
+              <input
+                type="email"
+                name="emailAddress"
+                required
+                value={user.email}
+              />
               <br />
 
-              <label htmlFor="entry.1099971039">Email: </label>
-              <input type="email" name="entry.1099971039" required />
+              <label htmlFor="entry.927940808">Name: </label>
+              <input
+                name="entry.927940808"
+                type="text"
+                value={user.name}
+                required
+              />
               <br />
+              <table>
+                <th>
+                  <td>Name</td>
+                  <td>4 units</td>
+                  <td>8 units</td>
+                  <td>12 units</td>
+                  <td>16 units</td>
+                </th>
+                <tr>
+                  <td>Soup</td>
+                  <td>
+                    <input
+                      type="checkbox"
+                      id="vehicle1"
+                      name="entry.1099971039"
+                      value="Soup for 1"
+                    />
+                  </td>
+                  <td>
+                    {' '}
+                    <input
+                      type="checkbox"
+                      id="vehicle1"
+                      name="entry.1099971039_sentinel"
+                      value="Soup for 1"
+                    />
+                  </td>
+                  <td>
+                    {' '}
+                    <input
+                      type="checkbox"
+                      id="vehicle1"
+                      name="entry.1099971039_sentinel"
+                      value="Soup for 1"
+                    />
+                  </td>
+                  <td>
+                    {' '}
+                    <input
+                      type="checkbox"
+                      id="vehicle1"
+                      name="entry.1099971039_sentinel"
+                      value="Soup for 1"
+                    />
+                  </td>
+                </tr>
+              </table>
+
+              <input
+                type="checkbox"
+                id="vehicle1"
+                name="entry.1099971039"
+                value="Soup for 1"
+              />
+              <input
+                type="checkbox"
+                id="vehicle1"
+                name="entry.1099971039_sentinel"
+                value="Soup for 1"
+              />
 
               <input className="form_button" type="submit" value="Send" />
+
               <button
                 className="form_button"
                 onClick={() => setOrderOpen(!orderOpen)}
