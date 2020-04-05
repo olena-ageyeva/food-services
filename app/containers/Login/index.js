@@ -30,6 +30,7 @@ export default function Login() {
         <Form>
           <label htmlFor="name">Username:</label>
           <input type="text" name="name" placeholder="enter your username" />
+          <br />
 
           <label htmlFor="name">Password:</label>
           <input
@@ -37,6 +38,13 @@ export default function Login() {
             name="name"
             placeholder="enter your username"
           />
+          <br />
+
+          <input className="form_button" type="submit" value="Login" />
+          <button className="form_button" type="button">
+            {' '}
+            Clear{' '}
+          </button>
         </Form>
       </Content>
     </div>

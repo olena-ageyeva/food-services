@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 import { FormattedMessage } from 'react-intl';
 
 import H1 from 'components/H1';
+import Iframe from 'react-iframe';
 import messages from './messages';
 import Content from './Content';
 import orderImage from '../../images/order.png';
@@ -34,10 +35,18 @@ export default function OrderPage() {
             <FormattedMessage {...messages.orderHeader} />
           </H1>
           <div id="content">
+            <Iframe
+              name="hidden_iframe"
+              id="hidden_iframe"
+              display="none"
+              position="relative"
+              allowFullScreen
+            />
             <form
               className="form"
               action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeBnN9lUFlc9tSKMuWIqHsSgxjnokckfw4AQvxh5OkR3hgnhQ/formResponse"
               onSubmit={() => setSubmitted(true)}
+              target="hidden_iframe"
             >
               <label htmlFor="entry.927940808">Name: </label>
               <input name="entry.927940808" type="text" />
