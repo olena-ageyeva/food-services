@@ -21,10 +21,11 @@ import {
 } from 'containers/App/selectors';
 import H2 from 'components/H2';
 import ReposList from 'components/ReposList';
-import AtPrefix from './AtPrefix';
+import { withRouter } from 'react-router-dom';
+// import AtPrefix from './AtPrefix';
 import CenteredSection from './CenteredSection';
 import Form from './Form';
-import Input from './Input';
+// import Input from './Input';
 import Section from './Section';
 import messages from './messages';
 import { loadRepos } from '../App/actions';
@@ -32,6 +33,9 @@ import { changeUsername } from './actions';
 import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
+import { menu } from './menu';
+import img from '../../images/pervoe.jpg';
+import Link from './Link';
 
 const key = 'home';
 
@@ -41,7 +45,7 @@ export function HomePage({
   error,
   repos,
   onSubmitForm,
-  onChangeUsername,
+  // onChangeUsername,
 }) {
   useInjectReducer({ key, reducer });
   useInjectSaga({ key, saga });
@@ -56,6 +60,8 @@ export function HomePage({
     error,
     repos,
   };
+
+  const images = require.context('./images', true);
 
   return (
     <article>
@@ -72,19 +78,35 @@ export function HomePage({
             <FormattedMessage {...messages.menuHeader} />
           </H2>
           <p>
-            <FormattedMessage {...messages.startProjectMessage} />
+            <FormattedMessage {...messages.menuDescriptionMessage} />
           </p>
         </CenteredSection>
         <Section>
+          <div id="food_list">
+            {Object.keys(menu).map(item => (
+              <div key={item} className="dish_groups">
+                <Link to={`/menu/${item}`}>
+                  <img src={images(`./${menu[item].en.img}`)} alt={item} />
+                  <p>{menu[item].en.title}</p>
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {/*
           <H2>
             <FormattedMessage {...messages.trymeHeader} />
           </H2>
+        */}
+
           <Form onSubmit={onSubmitForm}>
             <label htmlFor="username">
+              {/*
               <FormattedMessage {...messages.trymeMessage} />
               <AtPrefix>
                 <FormattedMessage {...messages.trymeAtPrefix} />
               </AtPrefix>
+
               <Input
                 id="username"
                 type="text"
@@ -92,6 +114,7 @@ export function HomePage({
                 value={username}
                 onChange={onChangeUsername}
               />
+              */}
             </label>
           </Form>
           <ReposList {...reposListProps} />
@@ -135,4 +158,5 @@ const withConnect = connect(
 export default compose(
   withConnect,
   memo,
+  withRouter,
 )(HomePage);

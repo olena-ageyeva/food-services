@@ -15,17 +15,17 @@ function Header() {
         <Img src={Banner} alt="react-boilerplate - Logo" />
       </A>
       <NavBar>
+        <HeaderLink to="/about">
+          <FormattedMessage {...messages.about} />
+        </HeaderLink>
         <HeaderLink to="/">
           <FormattedMessage {...messages.menu} />
         </HeaderLink>
-        <HeaderLink to="/features">
+        <HeaderLink to="/orders">
           <FormattedMessage {...messages.orders} />
         </HeaderLink>
-        <HeaderLink to="/features">
+        <HeaderLink to="/login">
           <FormattedMessage {...messages.login} />
-        </HeaderLink>
-        <HeaderLink to="/features">
-          <FormattedMessage {...messages.about} />
         </HeaderLink>
       </NavBar>
     </div>
