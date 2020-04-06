@@ -38,6 +38,16 @@ const Content = styled.label`
   input {
     margin: 10px auto;
   }
+
+  th {
+    margin: 5px;
+    padding: 5px;
+  }
+
+  td:nth-child(1) {
+    width: auto;
+    float: left;
+  }
 `;
 
 export default Content;

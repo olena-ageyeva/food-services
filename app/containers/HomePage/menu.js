@@ -1,6 +1,57 @@
 export const menu = {
   soups: {
-    ru: { title: 'Борщ' },
+    ru: {
+      title: 'Борщ',
+      img: 'pervoe.jpg',
+      items: [
+        {
+          title: 'Борщ',
+          price: '$4lb',
+          description: 'Beetroot sour soup',
+        },
+        {
+          title: 'Щи',
+          price: '$4lb',
+          description: 'Russian-style cabbage soup',
+        },
+        {
+          title: 'Куриный суп с вермишелью',
+          price: '$4lb',
+          description: 'Chicken soup with pasta',
+        },
+        {
+          title: 'Куриный суп с рисом',
+          price: '$4lb',
+          description: 'Chicken with rice',
+        },
+        {
+          title: 'Солянка',
+          price: '$4lb',
+          description: 'Thick, spicy and sour Russian soup',
+        },
+        {
+          title: 'Суп с фрикадельками',
+          price: '$4lb',
+          description: 'Soup with meatballs',
+        },
+        {
+          title: 'Рыбный суп',
+          price: '$5lb',
+          description: 'Soup with salmon',
+        },
+        { title: 'Гороховый суп', price: '$4lb', description: 'Peas soup' },
+        {
+          title: 'Рассольник',
+          price: '$4lb',
+          description: 'Traditional Russian soup made from pickled cucumbers',
+        },
+        {
+          title: 'Грибной суп',
+          price: '$4lb',
+          description: 'Mushroomsoup',
+        },
+      ],
+    },
     en: {
       title: 'Soups',
       img: 'pervoe.jpg',

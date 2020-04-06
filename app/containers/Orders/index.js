@@ -67,15 +67,15 @@ export default function OrderPage() {
               />
               <br />
               <table>
-                <th>
-                  <td>Name</td>
-                  <td>4 units</td>
-                  <td>8 units</td>
-                  <td>12 units</td>
-                  <td>16 units</td>
-                </th>
                 <tr>
-                  <td>Soup</td>
+                  <th>Name</th>
+                  <th>4 units</th>
+                  <th>8 units</th>
+                  <th>12 units</th>
+                  <th>16 units</th>
+                </tr>
+                <tr>
+                  <td>Борщ</td>
                   <td>
                     <input
                       type="checkbox"
@@ -95,37 +95,59 @@ export default function OrderPage() {
                   </td>
                   <td>
                     {' '}
-                    <input
-                      type="checkbox"
-                      id="vehicle1"
-                      name="entry.1099971039_sentinel"
-                      value="Soup for 1"
-                    />
+                    <input type="checkbox" id="vehicle1" value="Soup for 1" />
                   </td>
                   <td>
                     {' '}
-                    <input
-                      type="checkbox"
-                      id="vehicle1"
-                      name="entry.1099971039_sentinel"
-                      value="Soup for 1"
-                    />
+                    <input type="checkbox" id="vehicle1" value="Soup for 1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Щи</td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Куриный суп с вермишелью</td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                </tr>
+                <tr>
+                  <td>Куриный суп с рисом</td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
+                  </td>
+                  <td>
+                    <input type="checkbox" id="vehicle1" />
                   </td>
                 </tr>
               </table>
-
-              <input
-                type="checkbox"
-                id="vehicle1"
-                name="entry.1099971039"
-                value="Soup for 1"
-              />
-              <input
-                type="checkbox"
-                id="vehicle1"
-                name="entry.1099971039_sentinel"
-                value="Soup for 1"
-              />
 
               <input className="form_button" type="submit" value="Send" />
 
